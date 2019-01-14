@@ -16,24 +16,27 @@ class Solution
 {
     public function twoSum($given, $target)
     {
+        if (sizeof($given) < 2) {
+            echo 'Operation could not be done';
+            return false;
+        }
         $checker = []; // space complexity O(n)
-        
         //we are only accessing elements in array once, so time complexity O(n)
         for ($i=0; $i < sizeof($given); $i++) {
             $difference = $target - $given[$i]; // 10 - 4 = 6
-            if (key_exists($difference, $checker)) { // map functions so O(1)
-                echo 'Pair found: ' . $difference . ',' . $given[$i] . '<br>';
-            }
+                if (key_exists($difference, $checker)) { // map functions so O(1)
+                    echo 'Pair found: ' . $difference . ',' . $given[$i] . '<br>';
+                }
             $checker[$given[$i]] = $i;
             //     $checker[$i] = $given[$i];
-            //     echo '<pre>';
-            //     print_r($checker);
-            //     echo '</pre><br>';
+                //     echo '<pre>';
+                //     print_r($checker);
+                //     echo '</pre><br>';
         }
     }
 }
 
 
-$given = [ 4, 5, 12, -2, 6, 9 ];
+$given = [  ];
 $sol = new Solution();
-$sol->twoSum($given, 10);
+$sol->twoSum($given, 6);
