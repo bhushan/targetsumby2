@@ -37,6 +37,6 @@ class Solution
 }
 
 
-$given = [  ];
+$given = [ 4, 5, 12, -2, 8, 9 ];
 $sol = new Solution();
-$sol->twoSum($given, 6);
+$sol->twoSum($given, 10);
